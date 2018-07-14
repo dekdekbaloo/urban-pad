@@ -3,12 +3,13 @@ function createUrbanDictionary () {
 
   return {
     random () {
-      if (!randomCache[0]) {
+      if (randomCache[0]) {
         return Promise.resolve(randomCache.shift())
       }
 
       return fetch('http://api.urbandictionary.com/v0/random')
-        .then(({ data }) => {
+        .then(response => response.json())
+        .then((data) => {
           randomCache = data.list
           return randomCache.shift()
         })
