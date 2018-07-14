@@ -17,8 +17,16 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
 
-  <script type- 'text/javascript' src='/assets/scripts/lib/urban-dictionary.js'></script>
+  <!-- Firebase stuffs -->
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
 
+  <!-- uuid -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.8/uuid.min.js"></script>
+
+  <!-- editor -->
+  <script src='/assets/scripts/lib/sluggify.js'></script>
+  <script src='/assets/scripts/lib/firebase.js'></script>
+  <script src='/assets/scripts/lib/urban-dictionary.js'></script>
   <link rel='stylesheet' href="/assets/css/editor.css">
 </head>
 
@@ -39,13 +47,13 @@
           <a class="nav-link" href="#">Editor</a>
         </li>
       </ul>
+      <button id='save' type="button" class="btn btn-primary">Save</button>
     </div>
   </nav>
   <div class="container">
-    <h1>Editor</h1>
+    <h1 id='title'>Editor</h1>
     <hr>
-    <div class='container' id='editor-content' contenteditable="true">
-    </div>
+    <div class='container' id='editor-content'></div>
   </div>
   <script type- 'text/javascript' src='/assets/scripts/editor.js'></script>
 </body>
