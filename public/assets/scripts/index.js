@@ -2,6 +2,7 @@ function main () {
   let pageStart = 0
   const listContent = document.querySelector('#list-content')
   const seeMoreButton = document.querySelector('#see-more')
+  const alert = document.querySelector('#alert')
 
   seeMoreButton.addEventListener('click', seeMore)
 
@@ -41,6 +42,16 @@ function main () {
   }
 
   loadPage()
+  nuts.animate()
+  chains.animate()
+  setInterval(() => {
+    const rect = alert.getBoundingClientRect()
+    nuts.spawn(rect.right, rect.top)
+  }, 250)
+  setInterval(() => {
+    const rect = alert.getBoundingClientRect()
+    chains.spawn(rect.right, rect.top)
+  }, 5000)
 }
 
 main()
