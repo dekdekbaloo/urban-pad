@@ -1,5 +1,5 @@
 function main () {
-  let pageStart = 0
+  let startTimeStamp = 0
   const listContent = document.querySelector('#list-content')
   const seeMoreButton = document.querySelector('#see-more')
   const alert = document.querySelector('#alert')
@@ -7,16 +7,23 @@ function main () {
   seeMoreButton.addEventListener('click', seeMore)
 
   function loadPage () {
-    const pagesPromise = pageApp.getPages(pageStart, 10)
+    const pagesPromise = pageApp.getPages(startTimeStamp, 10)
       .then(Object.entries)
+      .then(list => {
+        startTimeStamp = list[list.length - 1][1].timestamp
+        return list
+      })
       .then(appendList)
 
-    pageStart += 10
 
     return pagesPromise
   }
 
   function appendList (values) {
+    if (startTimeStamp > 0) {
+      // HACK: Fix duplicated list
+      values.shift()
+    }
     values.forEach(([ key, value ]) => {
       const node = document.createElement('div')
       node.className = 'card mt-3'
