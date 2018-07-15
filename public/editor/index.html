@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Urban Dictionary Pad</title>
+  <title>Urban Pad</title>
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -27,12 +27,14 @@
   <script src='/assets/scripts/lib/sluggify.js'></script>
   <script src='/assets/scripts/lib/firebase.js'></script>
   <script src='/assets/scripts/lib/urban-dictionary.js'></script>
+  <script src='/assets/scripts/lib/nuts.js'></script>
+  <script src='/assets/scripts/lib/chains.js'></script>
   <link rel='stylesheet' href="/assets/css/editor.css">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Urban Dictionary Pad</a>
+    <a class="navbar-brand" href="/">Urban Pad</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -41,10 +43,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Editor</a>
+          <a class="nav-link" href="/editor">Editor</a>
         </li>
       </ul>
       <button id='save' type="button" class="btn btn-primary">Save</button>

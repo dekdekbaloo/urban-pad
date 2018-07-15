@@ -14,7 +14,7 @@ function createUrbanDictionary () {
         return Promise.resolve(randomCache.shift())
       }
 
-      return fetch('http://api.urbandictionary.com/v0/random')
+      return fetch('https://api.urbandictionary.com/v0/random')
         .then(response => response.json())
         .then((data) => {
           isFetching = false
